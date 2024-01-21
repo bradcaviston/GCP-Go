@@ -22,7 +22,7 @@ func main() {
     todoGroup.Post("/:id?", todo.Post)
     todoGroup.Delete("/:id", todo.Delete)
 
-    app.Listen("localhost:3000")
+    app.Listen("localhost:8080")
 
     defer db.Client.Close()
 }

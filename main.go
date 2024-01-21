@@ -11,7 +11,7 @@ import (
 
 func main() {
     ctx := context.Background()
-	app := fiber.New()
+    app := fiber.New()
 
     db.Connect(ctx)
     util.CreateValidator()
@@ -22,7 +22,7 @@ func main() {
     todoGroup.Post("/:id?", todo.Post)
     todoGroup.Delete("/:id", todo.Delete)
 
-    app.Listen("localhost:8080")
+    app.Listen(":8080")
 
     defer db.Client.Close()
 }
